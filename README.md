@@ -24,6 +24,8 @@ Text("Hello, Flutter!")
     .padding()
     .center()
     .backgroundColor(Colors.blue);
+Image.asset('assets/person.png')
+    .respectSafeArea()
 ```
 
 ## Getting started
