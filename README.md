@@ -11,29 +11,46 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
+Swiftify brings the simplicity and elegance of SwiftUI's modifier-style syntax to Flutter! With Swiftify, you can create beautiful UIs with cleaner and more readable code by using chainable, declarative methods to modify widgets.
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+SwiftUI-like Modifiers: Apply common widget properties (e.g., padding, textstyles etc) with intuitive .modifier() methods.
+Chainable Methods: Combine multiple modifications into a single statement for a clean and declarative style.
+Cleaner Codebase: Reduce widget nesting and improve code readability.
+Support for Common Widgets: Includes extensions for Text and more.
+
+```dart
+Text("Hello, Flutter!")
+    .padding()
+    .center()
+    .backgroundColor(Colors.blue);
+```
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To start using Swiftify, add the package to your Flutter project.
 
 ```dart
-const like = 'sample';
+dependencies:
+  swiftify: ^0.0.1
+```
+
+Run flutter pub get to fetch the package.
+
+Import the package in your Dart file:
+
+```dart
+import 'package:swiftify/swiftify.dart';
+```
+## Usage
+Text Modifier Example
+```dart
+Text("Hello, Flutter!")
+    .padding()
+    .center()
+    .backgroundColor(Colors.blue);
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Contributing: Contributions are welcome! Feel free to open issues or submit pull requests on GitHub.
