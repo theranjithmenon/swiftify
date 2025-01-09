@@ -4,7 +4,7 @@ extension PaddingModifer on Widget {
   /// Adds padding to a widget using various styles.
   Widget padding({
     PaddingStyle? paddingStyle,
-    EdgeInsetsGeometry? padding,
+    double? padding,
     double? top,
     double? bottom,
     double? left,
@@ -36,7 +36,7 @@ extension PaddingModifer on Widget {
     EdgeInsetsGeometry computeEdgeInsets() {
       switch (paddingStyle) {
         case PaddingStyle.all:
-          return padding ?? const EdgeInsets.all(8.0);
+          return EdgeInsets.all(padding ?? 8.0);
         case PaddingStyle.only:
           return EdgeInsets.only(
             top: top ?? 0,
@@ -53,7 +53,7 @@ extension PaddingModifer on Widget {
           // Use MediaQuery to fetch view padding
           return MediaQuery.of(context!).viewPadding;
         default:
-          return padding ?? const EdgeInsets.all(8.0);
+          return EdgeInsets.all(padding ?? 8.0);
       }
     }
 
