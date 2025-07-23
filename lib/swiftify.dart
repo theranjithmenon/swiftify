@@ -1,5 +1,6 @@
 library swiftify;
 
+export 'src/actions.dart';
 export 'src/center.dart';
 export 'src/container.dart';
 export 'src/padding.dart';

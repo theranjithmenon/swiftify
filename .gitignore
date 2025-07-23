@@ -1,0 +1,4 @@
+.dart_tool/
+analysis_options.yaml
+*.iml
+/pubspec.lock
