@@ -50,7 +50,10 @@ Text Modifier Example
 Text("Hello, Flutter!")
     .padding()
     .center()
-    .backgroundColor(Colors.blue);
+    .backgroundColor(Colors.blue)
+    .onGesture(
+        onTap() => print("Hello world"),
+    );
 ```
 
 ## Additional information
