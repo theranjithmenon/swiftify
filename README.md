@@ -34,7 +34,7 @@ To start using Swiftify, add the package to your Flutter project.
 
 ```dart
 dependencies:
-  swiftify: ^1.1.0
+  swiftify: ^1.2.0
 ```
 
 Run flutter pub get to fetch the package.
@@ -54,6 +54,17 @@ Text("Hello, Flutter!")
     .onGesture(
         onTap() => print("Hello world"),
     );
+```
+
+List Modifier Example
+```dart
+final values = ["Hello", "World"];
+
+values.asListViewBuilder(
+    itemBuilder: (BuildContext context, int index, dynamic item) {
+        return const SizedBox();
+    },
+);
 ```
 
 ## Additional information
