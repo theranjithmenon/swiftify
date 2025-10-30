@@ -1,73 +1,55 @@
 import 'package:flutter/material.dart';
 
 extension TextModifiers on Text {
-  Text fontSize(double size) {
+  Text _withStyle(TextStyle Function(TextStyle base) update) {
+    final baseStyle = style ?? const TextStyle();
+    final newStyle = update(baseStyle);
     return Text(
       data ?? '',
-      style: (style ?? const TextStyle()).copyWith(fontSize: size),
+      key: key,
+      style: newStyle,
       textAlign: textAlign,
-      maxLines: maxLines,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
       overflow: overflow,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      strutStyle: strutStyle,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior: textHeightBehavior,
+      selectionColor: selectionColor,
     );
   }
 
-  Text fontWeight(FontWeight weight) {
-    return Text(
-      data ?? '',
-      style: (style ?? const TextStyle()).copyWith(fontWeight: weight),
-      textAlign: textAlign,
-      maxLines: maxLines,
-      overflow: overflow,
-    );
-  }
+  Text fontSize(double size) => _withStyle((s) => s.copyWith(fontSize: size));
 
-  Text fontFamily(String fontFamily) {
-    return Text(
-      data ?? '',
-      style: (style ?? const TextStyle()).copyWith(fontFamily: fontFamily),
-      textAlign: textAlign,
-      maxLines: maxLines,
-      overflow: overflow,
-    );
-  }
+  Text fontWeight(FontWeight weight) =>
+      _withStyle((s) => s.copyWith(fontWeight: weight));
 
-  Text color(Color color) {
-    return Text(
-      data ?? '',
-      style: (style ?? const TextStyle()).copyWith(color: color),
-      textAlign: textAlign,
-      maxLines: maxLines,
-      overflow: overflow,
-    );
-  }
+  Text fontFamily(String family) =>
+      _withStyle((s) => s.copyWith(fontFamily: family));
 
-  Text italic() {
-    return Text(
-      data ?? '',
-      style: (style ?? const TextStyle()).copyWith(fontStyle: FontStyle.italic),
-      textAlign: textAlign,
-      maxLines: maxLines,
-      overflow: overflow,
-    );
-  }
+  Text color(Color color) => _withStyle((s) => s.copyWith(color: color));
 
-  Text bold() {
-    return Text(
-      data ?? '',
-      style: (style ?? const TextStyle()).copyWith(fontWeight: FontWeight.bold),
-      textAlign: textAlign,
-      maxLines: maxLines,
-      overflow: overflow,
-    );
-  }
+  Text italic() => _withStyle((s) => s.copyWith(fontStyle: FontStyle.italic));
 
-  Text align(TextAlign align) {
-    return Text(
-      data ?? '',
-      style: style,
-      textAlign: align,
-      maxLines: maxLines,
-      overflow: overflow,
-    );
-  }
+  Text bold() => _withStyle((s) => s.copyWith(fontWeight: FontWeight.bold));
+
+  Text align(TextAlign align) => Text(
+        data ?? '',
+        key: key,
+        style: style,
+        textAlign: align,
+        textDirection: textDirection,
+        locale: locale,
+        softWrap: softWrap,
+        overflow: overflow,
+        maxLines: maxLines,
+        semanticsLabel: semanticsLabel,
+        strutStyle: strutStyle,
+        textWidthBasis: textWidthBasis,
+        textHeightBehavior: textHeightBehavior,
+        selectionColor: selectionColor,
+      );
 }
