@@ -34,7 +34,7 @@ To start using Swiftify, add the package to your Flutter project.
 
 ```dart
 dependencies:
-  swiftify: ^1.2.0
+  swiftify: ^1.4.0
 ```
 
 Run flutter pub get to fetch the package.
